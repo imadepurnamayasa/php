@@ -1,9 +1,12 @@
 <?php
 
-include FOLDER_CONFIG.'conf_conn_localhost.php';
-include FOLDER_CLASS.'cls_login.php';
+require_once FOLDER_CONFIG.'conf_conn_localhost.php';
+require_once FOLDER_CLASS.'cls_request.php';
+require_once FOLDER_CLASS.'cls_login.php';
 
-$login = new Login($conn_localhost);
+$request = new Request();
+
+$login = new Login($conn_localhost, $request, $response);
 $data = $login->all();
 ?>
 <h1>Login</h1>
@@ -21,7 +24,8 @@ $data = $login->all();
         <td><?= $row->username ?></td>
         <td><?= $row->password ?></td>
         <td>
-            <button>Hapus</button>
+            <a href="index.php?module=<?= $module ?>&menu=form&action=ubah&id=<?= $row->id ?>"><button>Ubah</button></a>
+            <a href="index.php?module=<?= $module ?>&menu=form&action=hapus&id=<?= $row->id ?>"><button>Hapus</button></a>
         </td>
     </tr>
     <?php } ?>

@@ -9,6 +9,7 @@ define('FOLDER_MODULE', ROOT . '/' . 'module/');
 define('FOLDER_PUBLIC', ROOT . '/' . 'public/');
 
 include FOLDER_FUNCTION.'func_global.php';
+include FOLDER_INCLUDE.'inc_core.php';
 include FOLDER_INCLUDE.'inc_header.php';
 include FOLDER_INCLUDE.'inc_module.php';
 include FOLDER_INCLUDE.'inc_footer.php';
