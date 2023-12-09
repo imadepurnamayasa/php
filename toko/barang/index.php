@@ -1,3 +1,10 @@
+<?php
+require_once __DIR__.'/../db.php';
+$stmt = $conn->prepare("SELECT * FROM barang");
+$stmt->execute();
+$stmt->setFetchMode(PDO::FETCH_OBJ);
+$data = $stmt->fetchAll();
+?>
 <h1>BARANG</h1>
 <form action="">
     <table>
@@ -20,9 +27,10 @@
         <th>NAMA BARANG</th>
         <th>AKSI</th>
     </tr>
+    <?php foreach($data as $row) { ?>
     <tr>
-        <td>1</td>
-        <td>CONTOH</td>
+        <td><?= $row->ID ?></td>
+        <td><?= $row->NAMA_BARANG ?></td>
         <td>
             <select name="" id="" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
                 <option value="">- PILIH -</option>
@@ -31,4 +39,5 @@
             </select>
         </td>  
     </tr>
+    <?php } ?>
 </table>
