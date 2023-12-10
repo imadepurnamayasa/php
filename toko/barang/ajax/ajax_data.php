@@ -16,8 +16,8 @@ $data = query_semua_barang($conn);
         <td>
             <select name="" id="" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
                 <option value="">- PILIH -</option>
-                <option value="form.php?id=<?= $row->ID ?>&aksi=ubah">Ubah</option>
-                <option value="form.php?id=<?= $row->ID ?>&aksi=hapus">Hapus</option>
+                <option value="form.php?id=<?= $row->ID ?>">Ubah</option>
+                <option value="form_hapus.php?id=<?= $row->ID ?>">Hapus</option>
             </select>
         </td>  
     </tr>

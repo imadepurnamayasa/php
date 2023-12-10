@@ -36,7 +36,7 @@ window.addEventListener("DOMContentLoaded", function() {
         } else if (form_barang.satuan_id.value === "") {
             document.getElementById("pesan_satuan_id").innerHTML = "Satuan belum di pilih.";
             return false;
-        } else if (form_barang.satuan_id.value === "") {
+        } else if (form_barang.margin_penjualan.value === "") {
             document.getElementById("pesan_margin_penjualan").innerHTML = "Margin penjualan belum di isi.";
             return false;
         } else {
