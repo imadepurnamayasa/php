@@ -68,6 +68,11 @@ if (strtolower($submit) === 'simpan') {
         $stmt->bindParam(':SATUAN_ID', $satuan_id);
         $stmt->bindParam(':MARGIN_PENJUALAN', $margin_penjualan);
         $stmt->execute();
+        if ($stmt->rowCount() > 0) {
+            echo 'Data berhasil di simpan.';
+        } else {
+            echo 'Data gagal di simpan.';
+        }
     } else {
         $query =
             "
@@ -94,6 +99,10 @@ if (strtolower($submit) === 'simpan') {
         $stmt->bindParam(':MARGIN_PENJUALAN', $margin_penjualan);
         $stmt->bindParam(':ID', $id);
         $stmt->execute();
+        if ($stmt->rowCount() > 0) {
+            echo 'Data berhasil di simpan.';
+        } else {
+            echo 'Data gagal di simpan.';
+        }
     }
-    header('location: index.php');
 }
