@@ -45,15 +45,17 @@ window.addEventListener("DOMContentLoaded", function() {
     }
 
     function form_simpan(form_barang) {
-        var xhttp = new XMLHttpRequest();
-        var data = new FormData(form_barang);
-        data.append("submit", "simpan");
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("data").innerHTML = this.responseText;
-            }
-        };
-        xhttp.open("POST", "ajax/ajax_simpan.php", true);
-        xhttp.send(data);
+        if (form_barang.submit.value === "simpan") {
+            var xhttp = new XMLHttpRequest();
+            var data = new FormData(form_barang);
+            data.append("submit", "simpan");
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("data").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("POST", "ajax/ajax_simpan.php", true);
+            xhttp.send(data);
+        }
     }
 });

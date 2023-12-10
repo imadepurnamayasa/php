@@ -10,7 +10,7 @@ $merek_id = isset($_POST['merek_id']) ? $_POST['merek_id'] : '';
 $satuan_id = isset($_POST['satuan_id']) ? $_POST['satuan_id'] : '';
 $margin_penjualan = isset($_POST['margin_penjualan']) ? $_POST['margin_penjualan'] : '';
 $submit = isset($_POST['submit']) ? $_POST['submit'] : '';
-if (strtolower($submit) === 'simpan') {
+if ($submit === 'simpan') {
     if (empty($penjual_id)) {
         echo 'Penjual belum di pilih.';
         exit;

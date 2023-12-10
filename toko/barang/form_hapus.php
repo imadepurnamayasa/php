@@ -20,7 +20,7 @@ $margin_penjualan = isset($data->MARGIN_PENJUALAN) ? $data->MARGIN_PENJUALAN : '
         </tr>
         <tr>
             <td>
-                <button type="submit" name="submit" value="ya">Ya</button>
+                <button type="submit" name="submit" value="hapus">Ya</button>
                 <button type="button">Tidak</button>
             </td>
         </tr>
