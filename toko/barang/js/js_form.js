@@ -1,16 +1,16 @@
 window.addEventListener("DOMContentLoaded", function() {
-    var form_barang = document.form_barang;
+    const form_barang = document.form_barang;
 
     form_barang.addEventListener("submit", function(event) {
-        if (form_validasi(form_barang)) {
-            form_simpan(form_barang);
+        if (form_validasi()) {
+            form_simpan();
         }
         event.preventDefault();
         event.stopPropagation();
         return;
     });
 
-    function form_validasi(form_barang) {
+    function form_reset() {
         document.getElementById("pesan_penjual_id").innerHTML = "";
         document.getElementById("pesan_nama_barang").innerHTML = "";
         document.getElementById("pesan_nama_dagang").innerHTML = "";
@@ -18,6 +18,10 @@ window.addEventListener("DOMContentLoaded", function() {
         document.getElementById("pesan_merek_id").innerHTML = "";
         document.getElementById("pesan_satuan_id").innerHTML = "";
         document.getElementById("pesan_margin_penjualan").innerHTML = "";
+    }
+
+    function form_validasi() {
+        form_reset();
         if (form_barang.penjual_id.value === "") {
             document.getElementById("pesan_penjual_id").innerHTML = "Penjual belum di pilih.";
             return false;
@@ -44,11 +48,19 @@ window.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    function form_simpan(form_barang) {
+    function form_simpan() {
         if (form_barang.submit.value === "simpan") {
-            var xhttp = new XMLHttpRequest();
-            var data = new FormData(form_barang);
+            const url = new URL(window.location.href);
+            const searchParams = url.searchParams;
+
+            const data = new FormData(form_barang);
+            data.append("id", searchParams.get('id'));
             data.append("submit", "simpan");
+
+            const xhttp = new XMLHttpRequest();
+            xhttp.onprogress = function() {
+                document.getElementById("data").innerHTML = "proses";
+            };
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     document.getElementById("data").innerHTML = this.responseText;

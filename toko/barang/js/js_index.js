@@ -1,19 +1,20 @@
 window.addEventListener("DOMContentLoaded", function() {
-    var form_barang = document.getElementById("form_barang");
+    const form_barang = document.getElementById("form_barang");
     
     data_barang();
 
     form_barang.addEventListener("submit", function(event) {
-        data_barang(form_barang);
+        data_barang();
         event.preventDefault();
         event.stopPropagation();
         return;
     });
 
-    function data_barang(form_barang) {
-        var xhttp = new XMLHttpRequest();
-        var data = new FormData(form_barang);
+    function data_barang() {
+        const data = new FormData(form_barang);
         data.append("submit", "cari");
+
+        const xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
             document.getElementById("data").innerHTML = this.responseText;

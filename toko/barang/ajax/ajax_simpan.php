@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../../db.php';
 require_once __DIR__.'/../query/query_barang.php';
-$id = isset($_GET['id']) ? $_GET['id'] : 0;
+$id = isset($_POST['id']) ? $_POST['id'] : 0;
 $penjual_id = isset($_POST['penjual_id']) ? $_POST['penjual_id'] : '';
 $nama_barang = isset($_POST['nama_barang']) ? $_POST['nama_barang'] : '';
 $nama_dagang = isset($_POST['nama_dagang']) ? $_POST['nama_dagang'] : '';
@@ -12,25 +12,46 @@ $margin_penjualan = isset($_POST['margin_penjualan']) ? $_POST['margin_penjualan
 $submit = isset($_POST['submit']) ? $_POST['submit'] : '';
 if ($submit === 'simpan') {
     if (empty($penjual_id)) {
-        echo 'Penjual belum di pilih.';
+        echo json_encode([
+            'status' => false,
+            'pesan' => 'Penjual belum di pilih.'
+        ]);
         exit;
     } else if (empty($nama_barang)) {
-        echo 'Nama barang belum di isi.';
+        echo json_encode([
+            'status' => false,
+            'pesan' => 'Nama barang belum di isi.'
+        ]);
         exit;
     } else if (empty($nama_dagang)) {
-        echo 'Nama dagang belum di isi.';
+        echo json_encode([
+            'status' => false,
+            'pesan' => 'Nama dagang belum di isi.'
+        ]);
         exit;
     } else if (empty($kategori_id)) {
-        echo 'Kategori belum di pilih.';
+        echo json_encode([
+            'status' => false,
+            'pesan' => 'Kategori belum di pilih.'
+        ]);
         exit;
     } else if (empty($merek_id)) {
-        echo 'Merek belum di pilih.';
+        echo json_encode([
+            'status' => false,
+            'pesan' => 'Merek belum di pilih.'
+        ]);
         exit;
     } else if (empty($satuan_id)) {
-        echo 'Satuan belum di pilih.';
+        echo json_encode([
+            'status' => false,
+            'pesan' => 'Satuan belum di pilih.'
+        ]);
         exit;
     } else if (empty($margin_penjualan)) {
-        echo 'Margin penjualan belum di isi.';
+        echo json_encode([
+            'status' => false,
+            'pesan' => 'Margin penjualan belum di isi.'
+        ]);
         exit;
     }
     $total = query_total_barang($conn, $id); 
@@ -69,9 +90,15 @@ if ($submit === 'simpan') {
         $stmt->bindParam(':MARGIN_PENJUALAN', $margin_penjualan);
         $stmt->execute();
         if ($stmt->rowCount() > 0) {
-            echo 'Data berhasil di simpan.';
+            echo json_encode([
+                'status' => true,
+                'pesan' => 'Data berhasil di simpan.'
+            ]);
         } else {
-            echo 'Data gagal di simpan.';
+            echo json_encode([
+                'status' => false,
+                'pesan' => 'Data berhasil di simpan.'
+            ]);
         }
     } else {
         $query =
@@ -100,9 +127,15 @@ if ($submit === 'simpan') {
         $stmt->bindParam(':ID', $id);
         $stmt->execute();
         if ($stmt->rowCount() > 0) {
-            echo 'Data berhasil di simpan.';
+            echo json_encode([
+                'status' => true,
+                'pesan' => 'Data berhasil di simpan.'
+            ]);
         } else {
-            echo 'Data gagal di simpan.';
+            echo json_encode([
+                'status' => false,
+                'pesan' => 'Data berhasil di simpan.'
+            ]);
         }
     }
 }

@@ -1,8 +1,8 @@
 window.addEventListener("DOMContentLoaded", function() {
-    var form_barang = document.form_barang;
+    const form_barang = document.form_barang;
 
     form_barang.addEventListener("submit", function(event) {
-        form_hapus(form_barang);
+        form_hapus();
         event.preventDefault();
         event.stopPropagation();
         return;
@@ -10,9 +10,17 @@ window.addEventListener("DOMContentLoaded", function() {
 
     function form_hapus() {
         if (form_barang.submit.value === "hapus") {
-            var xhttp = new XMLHttpRequest();
-            var data = new FormData(form_barang);
+            const url = new URL(window.location.href);
+            const searchParams = url.searchParams;
+            
+            const data = new FormData(form_barang);
+            data.append("id", searchParams.get('id'));
             data.append("submit", "hapus");
+
+            const xhttp = new XMLHttpRequest();
+            xhttp.onprogress = function() {
+                document.getElementById("data").innerHTML = "proses";
+            };
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     document.getElementById("data").innerHTML = this.responseText;
