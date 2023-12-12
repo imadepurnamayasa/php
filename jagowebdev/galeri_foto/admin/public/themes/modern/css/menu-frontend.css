@@ -1,0 +1,20 @@
+/**
+* @author Agus Prawoto Hadi
+* @url https://jagowebdev.com
+* @copyright Agus Prawoto Hadi
+* @notice You can use this code for personal use only, you are not allowed to republish or to sell !!!.
+*/
+
+.btn-action {
+	float: right;
+	padding-left: 5px;
+	margin-left: 5px;
+}
+
+.btn-edit {
+	font-size: 80%;
+	line-height: 20px;
+}
+.menu-group-container li {
+	/* cursor: pointer; */
+}

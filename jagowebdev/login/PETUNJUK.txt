@@ -1,0 +1,7 @@
+1. Ekstrak file ke folder htdocs
+2. Buat database misal regsitrasi dan load file registrasi-sql.sql ke database tersebut
+3. Ubah nilai variabel $base_url di app/config/config.php sesuai dengan lokasi dimana file php di ekstrak, misal jika file dikestrak di htdocs/registrasi, maka nilai $base_url diubah menjadi http://localhost/registrasi
+4. Ubah konfigurasi database yang ada di file app/config/database.php
+
+EMAIL
+Untuk setting email bisa dibaca di file User Manual - PHP Admin Template Jagowebdev yang disertakan pada file download ini

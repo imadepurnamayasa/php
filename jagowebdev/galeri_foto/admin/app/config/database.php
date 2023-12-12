@@ -1,0 +1,2 @@
+<?php
+// See parent config
