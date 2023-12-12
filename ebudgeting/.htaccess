@@ -1,0 +1,52 @@
+RewriteEngine on
+DirectoryIndex index.php
+
+RewriteRule ^home\.mu$ index.php
+RewriteRule ^admin-guide\.mu$ index.php?page=admin
+RewriteRule ^operator-guide\.mu$ index.php?page=operator
+
+RewriteRule ^jenis-belanja\.mu$ index.php?page=jenisbelanja
+RewriteRule ^jenis-belanja-page-(.*)\.mu$ index.php?page=jenisbelanja&p=$1 [L]
+RewriteRule ^tambah-jenis-belanja\.mu$ index.php?page=tambahjenisbelanja
+RewriteRule ^edit-jenis-belanja-(.*)\.mu$ index.php?page=editjenisbelanja&id=$1 [L]
+
+RewriteRule ^sub-jenis-belanja\.mu$ index.php?page=subjenisbelanja
+RewriteRule ^sub-jenis-belanja-page-(.*)\.mu$ index.php?page=subjenisbelanja&p=$1 [L]
+RewriteRule ^tambah-sub-jenis-belanja\.mu$ index.php?page=tambahsubjenisbelanja
+RewriteRule ^edit-sub-jenis-belanja-(.*)\.mu$ index.php?page=editsubjenisbelanja&id=$1 [L]
+RewriteRule ^target-dan-realisasi\.mu$ index.php?page=targetrealisasi
+
+RewriteRule ^data-umum\.mu$ index.php?page=dataumum
+RewriteRule ^data-umum-page-(.*)\.mu$ index.php?page=dataumum&p=$1 [L]
+RewriteRule ^tambah-data-umum\.mu$ index.php?page=tambahdataumum
+RewriteRule ^edit-data-umum-(.*)\.mu$ index.php?page=editdataumum&id=$1 [L]
+RewriteRule ^detail-data-umum-(.*)\.mu$ index.php?page=detaildataumum&id=$1 [L]
+
+RewriteRule ^anggaran-belanja\.mu$ index.php?page=anggaranbelanja
+RewriteRule ^anggaran-belanja-page-(.*)\.mu$ index.php?page=anggaranbelanja&p=$1 [L]
+RewriteRule ^tambah-anggaran-belanja\.mu$ index.php?page=tambahanggaranbelanja
+RewriteRule ^edit-anggaran-belanja-(.*)\.mu$ index.php?page=editanggaranbelanja&id=$1 [L]
+RewriteRule ^detail-anggaran-belanja-(.*)\.mu$ index.php?page=detailanggaranbelanja&id=$1 [L]
+
+RewriteRule ^all-operator\.mu$ index.php?page=semuaoperator
+RewriteRule ^all-operator-page-(.*)\.mu$ index.php?page=semuaoperator&p=$1 [L]
+RewriteRule ^tambah-all-operator\.mu$ index.php?page=tambahsemuaoperator
+RewriteRule ^edit-all-operator-(.*)\.mu$ index.php?page=editsemuaoperator&id=$1 [L]
+RewriteRule ^detail-all-operator-(.*)\.mu$ index.php?page=detailsemuaoperator&id=$1 [L]
+
+RewriteRule ^all-admin\.mu$ index.php?page=semuaadmin
+RewriteRule ^tambah-all-admin\.mu$ index.php?page=tambahsemuaadmin
+RewriteRule ^edit-all-admin-(.*)\.mu$ index.php?page=editsemuaadmin&id=$1 [L]
+RewriteRule ^detail-all-admin-(.*)\.mu$ index.php?page=detailsemuaadmin&id=$1 [L]
+
+RewriteRule ^pegawai\.mu$ index.php?page=pegawai
+RewriteRule ^pegawai-page-(.*)\.mu$ index.php?page=pegawai&p=$1 [L]
+RewriteRule ^tambah-pegawai\.mu$ index.php?page=tambahpegawai
+RewriteRule ^edit-pegawai-(.*)\.mu$ index.php?page=editpegawai&id=$1 [L]
+RewriteRule ^detail-pegawai-(.*)\.mu$ index.php?page=detailpegawai&id=$1 [L]
+
+RewriteRule ^laporan-akhir\.mu$ index.php?page=laporanakhir
+RewriteRule ^laporan-akhir-page-(.*)\.mu$ index.php?page=laporanakhir&p=$1 [L]
+RewriteRule ^setting-account\.mu$ index.php?page=settingaccount
+RewriteRule ^restore\.mu$ index.php?page=restore
+RewriteRule ^logout\.mu$ logout.php
