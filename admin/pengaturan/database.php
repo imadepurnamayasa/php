@@ -1,8 +1,8 @@
 <?php
 
-$konfigurasi_database = [
+$pengaturan_database = [
     'host' => 'localhost',
     'username' => 'root',
     'password' => '',
-    'dbname' => 'information_schema'
+    'dbname' => 'admin'
 ];
