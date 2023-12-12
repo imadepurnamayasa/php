@@ -1,4 +1,0 @@
-1. Ekstrak file ke folder htdocs
-2. Buat database misal menumanager dan load file menu-manager-sql.sql ke database tersebut
-3. Ubah nilai variabel $base_url di app/config/config.php sesuai dengan lokasi dimana file php di ekstrak, misal jika file dikestrak di htdocs/menumanager, maka nilai $base_url diubah menjadi http://localhost/menumanager
-4. Ubah konfigurasi database yang ada di file app/comfig/database.php
