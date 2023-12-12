@@ -11,7 +11,7 @@
  Target Server Version : 100428
  File Encoding         : 65001
 
- Date: 12/12/2023 15:54:50
+ Date: 12/12/2023 16:15:59
 */
 
 SET NAMES utf8mb4;
@@ -52,9 +52,9 @@ CREATE TABLE `m_modul`  (
 -- ----------------------------
 -- Records of m_modul
 -- ----------------------------
-INSERT INTO `m_modul` VALUES (1, 'Menu', 'sistem/menu/menu.php');
-INSERT INTO `m_modul` VALUES (2, 'Aplikasi', 'sistem/aplikasi/aplikasi.php');
-INSERT INTO `m_modul` VALUES (3, 'Hak Akses', 'sistem/hak_akses/hak_akses.php');
-INSERT INTO `m_modul` VALUES (4, 'Pengguna', 'sistem/pengguna/pengguna.php');
+INSERT INTO `m_modul` VALUES (1, 'Menu', '/sistem/menu/menu.php');
+INSERT INTO `m_modul` VALUES (2, 'Aplikasi', '/sistem/aplikasi/aplikasi.php');
+INSERT INTO `m_modul` VALUES (3, 'Hak Akses', '/sistem/hak_akses/hak_akses.php');
+INSERT INTO `m_modul` VALUES (4, 'Pengguna', '/sistem/pengguna/pengguna.php');
 
 SET FOREIGN_KEY_CHECKS = 1;
